@@ -1,0 +1,79 @@
+@import url('https://necolas.github.io/normalize.css/latest/normalize.css');
+
+* {
+    box-sizing: border-box;
+    font-family: cursive;
+}
+
+body, #root {
+  width: 100vw;
+  height: 100vh;
+  background-color: #62b5e5;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #fff;
+  width: 40%;
+  height: 40%;
+  border-radius: 5px;
+  padding: 20px 30px 20px 70px;
+  background-color: #f1d333;
+}
+
+label {
+  width: max-content;
+  text-align: left;
+  background-color: #c84f82;
+  padding: 6px 10px;
+  border-radius: 2px;
+  border: 2px double #000;
+  color: #fff;
+  font-size: 13px;
+}
+
+textarea {
+  display: flex;
+  justify-self: right;
+  width: 100%;
+  height: 100%;
+  border: 2px solid black;
+  margin: 15px 0;
+  font-family: sans-serif;
+  outline: none;
+}
+
+button.send-tsv {
+  width: 100px;
+  height: 50px;
+  background-color: #ececec;
+  border: 1px solid;
+}
+
+button.send-tsv:hover {
+  cursor: pointer;
+  background-color: black;
+  color: white;
+}
+
+.form-bottom {
+  width: 100%;
+  text-align: right;
+}
+
+@media screen and (max-width: 900px) {
+  form {
+    min-width: 400px;
+    min-height: 260px;
+  }
+}
