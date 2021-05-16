@@ -8,7 +8,9 @@
 body, #root {
   width: 100vw;
   height: 100vh;
-  background-color: #62b5e5;
+  background-color: #f6e6cb;
+  margin: 0;
+  padding: 0;
 }
 
 main {
@@ -27,18 +29,16 @@ form{
   width: 40%;
   height: 40%;
   border-radius: 5px;
-  padding: 20px 30px 20px 70px;
-  background-color: #f1d333;
+  padding: 40px 30px 20px 70px;
+  background-color: #e3cdc1;
 }
 
 label {
   width: max-content;
   text-align: left;
-  background-color: #c84f82;
+  background-color: #f6e6cb;
   padding: 6px 10px;
   border-radius: 2px;
-  border: 2px double #000;
-  color: #fff;
   font-size: 13px;
 }
 
@@ -47,28 +47,40 @@ textarea {
   justify-self: right;
   width: 100%;
   height: 100%;
-  border: 2px solid black;
+  border: none;
+  border-radius: 5px;
   margin: 15px 0;
   font-family: sans-serif;
   outline: none;
+  padding: 10px;
 }
 
 button.send-tsv {
   width: 100px;
   height: 50px;
-  background-color: #ececec;
-  border: 1px solid;
+  border: 1px solid #fff;
+  background-color: #f6e6cb;
+  border-radius: 5px;
 }
 
 button.send-tsv:hover {
   cursor: pointer;
-  background-color: black;
-  color: white;
+  background-color: #e7d4b5;
+}
+
+#loading:hover {
+  cursor: progress;
 }
 
 .form-bottom {
   width: 100%;
   text-align: right;
+}
+
+.modal-background {
+  position: fixed;
+  width: 100%;
+  height: 100%;
 }
 
 @media screen and (max-width: 900px) {
