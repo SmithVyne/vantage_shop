@@ -44,7 +44,7 @@ function Modal({tsv}) {
                         </div>
 
                         <div className="modal-bottom">
-                            <a href="https://www.youtube.com/watch?v=3P6bmhire-Y" className="url">https://www.youtube.com/watch?v=3P6bmhire-Y</a>
+                            <a href={`http://localhost:3000/shop/${uuid}`} className="url">{`http://localhost:3000/shop/${uuid}`}</a>
                             <button className="bottom-btns">Copy link</button>
                         </div>
                     </div>) :<Loader />}
