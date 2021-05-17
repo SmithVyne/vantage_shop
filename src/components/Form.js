@@ -1,11 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-export default function Form({tsv, setTsv, handleSubmit, loading}) {
+
+export default function Form({tsv, setTsv}) {
     return (
         <form>
             <label htmlFor="tsv">TSV content</label>
             <textarea onChange={({target}) => setTsv(target.value)} value={tsv} />
-            <span id={`${loading ? 'loading' : ''}`} className="form-bottom"><button className="send-tsv" type="button" onClick={handleSubmit}>Submit</button></span>
+            <span className="form-bottom"><Link to="/shop/1" className="bottom-btns" type="button">Submit</Link></span>
         </form>
     )
 }
