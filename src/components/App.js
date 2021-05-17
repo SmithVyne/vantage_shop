@@ -8,12 +8,27 @@ import { Route} from "react-router-dom";
 const App = () => {
   const [tsv, setTsv] = useState("");
   const uuid = uuidv4();
+  const [showModal, setShowModal] = useState(false);
+  const [showWrapper, setshowWrapper] = useState(true);
   
   return (
     <main>
-      <Form tsv={tsv} setTsv={setTsv} uuid={uuid} />
+      <Form 
+        tsv={tsv}
+        setTsv={setTsv} 
+        uuid={uuid}
+        setShowModal={setShowModal} 
+        setshowWrapper={setshowWrapper} 
+      />
       <Route path="/shop/:uuid">
-        <Modal setTsv={setTsv} tsv={tsv} />
+        <Modal 
+          setTsv={setTsv} 
+          tsv={tsv} 
+          showModal={showModal} 
+          setShowModal={setShowModal}
+          showWrapper={showWrapper}
+          setshowWrapper={setshowWrapper}
+        />
       </Route>
     </main>
   );
