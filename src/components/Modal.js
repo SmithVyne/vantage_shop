@@ -57,17 +57,20 @@ function Modal({setTsv, tsv, showModal, setShowModal, showWrapper, setshowWrappe
                         <Link to="/" className="fas fa-times"></Link>
                         <span className="modal-labels">Results</span>
                         <div className="response results">
-                            {JSON.stringify(shopData)}
+                            {JSON.stringify(shopData, null, 4)}
                         </div>
 
                         <span className="modal-labels">Errors</span>
                         <div className="response errors">
-                            {errors}
+                            {errors.map(err => <p>{err}</p>)}
                         </div>
 
                         <div className="modal-bottom">
                             <a href={`${url}`} className="url">{`${url}`}</a>
-                            <button onClick={copyToClipboard} className="bottom-btns">{copied ? 'Copied' : 'Copy link'}</button>
+                            <button 
+                                onClick={copyToClipboard} className="bottom-btns">
+                                    {copied ? 'Copied' : 'Copy link'}
+                            </button>
                         </div>
                     </div>) :<Loader />}
             </div>)}
