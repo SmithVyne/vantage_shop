@@ -1,16 +1,17 @@
-import React, { useEffect, useState, memo, useRef, useCallback } from 'react';
+import React, { useEffect, useState, memo, useRef } from 'react';
 import {Link, useParams} from 'react-router-dom';
 import Loader from './Loader';
 
 const apiUrl = 'http://localhost:3002';
 
-function Modal({setTsv, tsv, showModal, setShowModal, showWrapper, setshowWrapper}) {
+function Modal({setTsv, tsv, showModal, setShowModal}) {
     
     const [copied, setCopied] = useState(false);
     const [data, setData] = useState({});
     const {shopData, errors} = data;
     const {uuid} = useParams();
     const modalRef = useRef();
+    const closeRef = useRef();
     const url = `http://localhost:3000/shop/${uuid}`;
 
     useEffect(()=>{
@@ -35,26 +36,23 @@ function Modal({setTsv, tsv, showModal, setShowModal, showWrapper, setshowWrappe
         setCopied(true);
     }
 
-    const closeModal = ({target}) => modalRef.current === target && setshowWrapper(false)
-    
-    const escape = useCallback((e) => {
-        e.key === "Escape" && showWrapper && setshowWrapper(false)
-    }, [showWrapper, setshowWrapper])
+    const closeModal = ({target}) => modalRef.current === target && closeRef.current.click()
 
     useEffect(() => {
+        const escape = ({key}) => key === "Escape" && closeRef.current.click();
         document.addEventListener('keydown', escape)
+
         return () => {
             document.removeEventListener('keydown', escape)
         }
-    }, [escape])
+    }, [])
     
     return (
         <>
-            {showWrapper &&
-            (<div onClick={closeModal} ref={modalRef} className="modal-background">
+            <div onClick={closeModal} ref={modalRef} className="modal-background">
                 {showModal ? 
                     (<div className="modal">
-                        <Link to="/" className="fas fa-times"></Link>
+                        <Link ref={closeRef} to="/" className="fas fa-times"></Link>
                         <span className="modal-labels">Results</span>
                         <pre className="response results">
                             {JSON.stringify(shopData, null, 4)}
@@ -73,7 +71,7 @@ function Modal({setTsv, tsv, showModal, setShowModal, showWrapper, setshowWrappe
                             </button>
                         </div>
                     </div>) :<Loader />}
-            </div>)}
+            </div>
         </>
     )
 };

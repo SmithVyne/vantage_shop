@@ -9,7 +9,6 @@ const App = () => {
   const [tsv, setTsv] = useState("");
   const uuid = uuidv4();
   const [showModal, setShowModal] = useState(false);
-  const [showWrapper, setshowWrapper] = useState(true);
   
   return (
     <main>
@@ -17,8 +16,7 @@ const App = () => {
         tsv={tsv}
         setTsv={setTsv} 
         uuid={uuid}
-        setShowModal={setShowModal} 
-        setshowWrapper={setshowWrapper} 
+        setShowModal={setShowModal}  
       />
       <Route path="/shop/:uuid">
         <Modal 
@@ -26,8 +24,6 @@ const App = () => {
           tsv={tsv} 
           showModal={showModal} 
           setShowModal={setShowModal}
-          showWrapper={showWrapper}
-          setshowWrapper={setshowWrapper}
         />
       </Route>
     </main>
