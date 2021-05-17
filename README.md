@@ -1,7 +1,10 @@
 # Vantage Shop
 This is the React frontend app for the Vantage Shop. Follow the instructions below to setup locally. This readme will serve for both this frontend codebase and the Rails backend [https://github.com/SmithVyne/vantage_shop_api](https://github.com/SmithVyne/vantage_shop_api)
 
-## [Watch Demo Video](url)
+Demo Videos
+1. [Watch Demo Video 1: Overview](https://www.loom.com/share/e232debf50c6484ebcdb3f3bff445f80)
+2. [Watch Demo Video 2: Error handling](https://www.loom.com/share/5b41026b556e407bacfdb54bb050d313)
+3. [Conclusion](https://www.loom.com/share/eabbb537deda49c98e2a7fadb2460406)
 
 ## Technologies
   - React 🤝
