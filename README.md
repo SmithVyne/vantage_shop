@@ -29,6 +29,27 @@ Follow the steps below to test the project locally. First ensure you have a vers
 4. Run `npm start` to compile and serve the app on `http://localhost:3000` 
 or any other port randomly available to React.
 
+You can check out the API in node with this code:
+```
+const fs = require('async-file');
+const fetch = require('node-fetch');
+const { v4: uuidv4 } = require('uuid');
+
+(async () => {
+    const tsv = await fs.readFile("sampledata.tsv", { encoding: 'utf-8' })
+    fetch('http://localhost:3002', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({tsv, uuid: uuidv4()})
+    })
+    .then(res => res.json())
+    .then(data => console.log(JSON.stringify(data, null, 4)))
+    .catch(e => console.log(e))
+})()
+
+```
 
 👤 **Smith Nkereuwem**
 
