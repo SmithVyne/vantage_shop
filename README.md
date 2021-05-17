@@ -4,9 +4,9 @@ This is the React frontend app for the Vantage Shop. Follow the instructions bel
 ## [Watch Demo Video](url)
 
 ## Technologies
-  - React
+  - React 🤝
   - Ruby - 2.7.2
-  - Ruby on Rails
+  - Ruby on Rails 👌
   - ES6
 
 ## Installation
