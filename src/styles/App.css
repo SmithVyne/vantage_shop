@@ -133,6 +133,7 @@ textarea {
   background-color: #fff;
   overflow-y: scroll;
   margin-bottom: 40px;
+  font-size: 13px;
 }
 
 .results {
