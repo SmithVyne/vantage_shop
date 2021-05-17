@@ -56,13 +56,13 @@ function Modal({setTsv, tsv, showModal, setShowModal, showWrapper, setshowWrappe
                     (<div className="modal">
                         <Link to="/" className="fas fa-times"></Link>
                         <span className="modal-labels">Results</span>
-                        <div className="response results">
+                        <pre className="response results">
                             {JSON.stringify(shopData, null, 4)}
-                        </div>
+                        </pre>
 
                         <span className="modal-labels">Errors</span>
                         <div className="response errors">
-                            {errors.map(err => <p>{err}</p>)}
+                            {errors.map(err => <p key={err}>{err}</p>)}
                         </div>
 
                         <div className="modal-bottom">

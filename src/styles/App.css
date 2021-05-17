@@ -138,6 +138,8 @@ textarea {
 
 .results {
   height: 50%;
+  display: block;
+  text-align: left;
 }
 
 .errors {
