@@ -11,6 +11,7 @@ Demo Videos
   - Ruby - 2.7.2
   - Ruby on Rails 👌
   - ES6
+  - Edit: You'd also need PostgreSQL. Make sure you edit `config\database.yml` of the Rails app to match your PostGres setup
 
 ## Installation
 Follow the steps below to test the project locally. First ensure you have a version of [Node.js](http://nodejs.org/) equal or greater than v6.10.0 installed.
